@@ -16,7 +16,6 @@ script{
 bat (/mvn clean test/)
 
 }
-step ([$ : '', reportFilenamePattern : '**/testng-results.xml'])
 }
 }
 }
