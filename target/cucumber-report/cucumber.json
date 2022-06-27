@@ -1,0 +1,51 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2022-06-27T05:30:40.805Z",
+        "line": 9,
+        "name": "Generate Data Dummy Perseorangan and Approve",
+        "description": "",
+        "id": "lending-chanelling;generate-data-dummy-perseorangan-and-approve;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 609997200,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Create Scenario \"APPFILEIDV\"\"REAFILEIDV\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"APPFILEIDV\"",
+                  "offset": 16
+                },
+                {
+                  "val": "\"REAFILEIDV\"",
+                  "offset": 28
+                }
+              ],
+              "location": "generateDefinitions.CreateCSV.create_scenario(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@dataDummy"
+          }
+        ]
+      }
+    ],
+    "name": "Lending Chanelling",
+    "description": "",
+    "id": "lending-chanelling",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/dataDummyApprove.feature",
+    "tags": []
+  }
+]
