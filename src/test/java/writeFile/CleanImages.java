@@ -15,6 +15,7 @@ public class CleanImages {
             Worksheet sheet = workbook.getWorksheets().get(Constants.sheetImages);
 
             if (sheet.getPictures().getCount() != 0) {
+                System.out.println("Clean Images . . .");
                 for (int i = sheet.getPictures().getCount() - 1; i >= 0; i--) {
                     sheet.getPictures().get(i).remove();
                 }

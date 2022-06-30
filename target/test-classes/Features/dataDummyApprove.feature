@@ -18,4 +18,4 @@ Feature: Lending Chanelling
 
     Examples:
       | UserMaker | UserApprover | Pass      |
-      | admin     | approver     | 123456789 |
+      | admin     | Approver     | 123456789 |

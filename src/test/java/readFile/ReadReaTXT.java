@@ -17,7 +17,7 @@ public class ReadReaTXT {
     private final String txtRea = Constants.txtRea;
     String[] value2;
 
-    public String[] textFile(int idxNomorAplikasi, int idxNamaDebitur, int idxStatus) throws IOException {
+    public String[] textFile(int idxNomorAplikasi, int idxStatus) throws IOException {
 
         List<String> listOfStrings = new ArrayList<>();
         File folder = new File(pthFileValidation);

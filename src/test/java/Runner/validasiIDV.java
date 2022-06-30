@@ -1,10 +1,8 @@
 package Runner;
 
-import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
-@RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty",
                 "html:target/cucumber-report/cucumber.html",
@@ -15,5 +13,6 @@ import io.cucumber.junit.CucumberOptions;
         features = {"src/test/resources/Features/validasi.feature"},
         glue = {"generateDefinitions"}
 )
-public class validasiIDV {
+
+public class validasiIDV extends AbstractTestNGCucumberTests {
 }

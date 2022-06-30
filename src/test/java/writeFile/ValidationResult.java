@@ -3,6 +3,7 @@ package writeFile;
 import java.io.*;
 
 import Config.Constants;
+import TestData.ReadTestData;
 import org.apache.poi.hssf.usermodel.HSSFFormulaEvaluator;
 import org.apache.poi.openxml4j.util.ZipSecureFile;
 import org.apache.poi.ss.usermodel.*;
@@ -12,6 +13,7 @@ public class ValidationResult {
     String fileExcel = null;
     String[] sheetName = {Constants.scSheetApp, Constants.scSheetRea};
     String pthFileValidation = Constants.pthFileValidation;
+    ReadTestData readTestData = new ReadTestData();
 
     public void excelResultApp(int iCollect, String nomorAplikasi, String Status, boolean bStatus) throws IOException {
 
@@ -60,7 +62,8 @@ public class ValidationResult {
             System.out.println(Status);
             System.out.println("Row: " + iCollect);
             if (iRow == 2) {
-                sheet.shiftRows(2, 20, 1, true, true);
+                readTestData.testData();
+                sheet.shiftRows(2, Integer.parseInt(readTestData.jumlahData), 1, true, true);
 
 
             }
@@ -171,8 +174,8 @@ public class ValidationResult {
             System.out.println(Status);
             System.out.println("Row: " + iCollect);
             if (iRow == 2) {
-//            sheet.createRow(17);
-                sheet.shiftRows(2, 20, 1, true, true);
+                readTestData.testData();
+                sheet.shiftRows(2, Integer.parseInt(readTestData.jumlahData), 1, true, true);
 
 
             }
@@ -237,8 +240,8 @@ public class ValidationResult {
         } catch (Exception e) {
             e.getMessage();
         }
-
-        if (iCollect == sheet.getLastRowNum() - 1) {
+        readTestData.testData();
+        if (iCollect == Integer.parseInt(readTestData.jumlahData)) {
             for (int colNum = 0; colNum < cell; colNum++) {
                 sheet.autoSizeColumn(colNum);
             }
@@ -247,6 +250,7 @@ public class ValidationResult {
             scenarioResult.scenarioFile();
 
             //Clean content
+            System.out.println("Clean Text Scenario. . .");
             for (String nmSheet : sheetName) {
                 XSSFSheet sheetAll = wb.getSheet(nmSheet);
                 int lstRowNumberApp = sheetAll.getLastRowNum();
@@ -284,10 +288,11 @@ public class ValidationResult {
 
                 }
 
-                if (nmSheet.contains("Realisasi")) {
+                if (nmSheet.contains(Constants.scSheetRea)) {
                     CleanImages cleanImages = new CleanImages();
 
                     cleanImages.cleanAllImages();
+                    System.out.println("Finish");
                     scenarioResult.percentages();
 
                 }

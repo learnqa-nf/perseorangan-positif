@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>dataDummyPerseorangan</artifactId>
+    <groupId>org.chanelling</groupId>
+    <artifactId>PerseoranganPositifTestNG</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -20,6 +20,7 @@
             <url>https://repo.e-iceblue.com/nexus/content/groups/public/</url>
         </repository>
     </repositories>
+
 
     <build>
         <plugins>
@@ -36,6 +37,11 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <shutdown>kill</shutdown> <!-- Use it if required-->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                     <systemPropertyVariables>
                         <extent.reporter.spark.start>true</extent.reporter.spark.start>
                         <extent.reporter.spark.out>test-output/SparkReport/Spark.html</extent.reporter.spark.out>
@@ -46,43 +52,14 @@
     </build>
 
 
+
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
         <dependency>
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
             <version>5.6</version>
-        </dependency>
-
-        <!--  -->
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>6.10.4</version>
-        </dependency>
-
-
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
-        </dependency>
-
-        <!-- Selenium WebDriver Dependency -->
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>4.4.0</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- Junit Dependency -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
@@ -106,6 +83,50 @@
             <version>5.1.0</version>
         </dependency>
 
+        <!-- Selenium Dependency -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+
+        <!-- Selenium WebDriver Dependency -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>4.4.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Cucumber Dependency -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>6.1.1</version>
+        </dependency>
+
+        <!-- TestNG Dependency -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.3.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Cucumber TestNG Dependency -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>6.1.1</version>
+        </dependency>
+
+        <!-- Cucumber Core Dependency -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-core</artifactId>
+            <version>6.1.1</version>
+        </dependency>
+
         <!-- Extent Report Dependency -->
         <dependency>
             <groupId>tech.grasshopper</groupId>
@@ -114,18 +135,6 @@
             <scope>test</scope>
         </dependency>
 
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.7.30</version>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>6.11.0</version>
-            <scope>test</scope>
-        </dependency>
 
     </dependencies>
 

@@ -7,13 +7,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="dataDummyBadanUsahaNormal - New" />
-        <module name="dataDummyBadanUsahaNormal" />
-        <module name="Perseorangan-Positif" />
+        <module name="PerseoranganPositifTestNG" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="dataDummyPerseoranganNormal" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>

@@ -78,10 +78,6 @@ public String timeStamp;
 
     public String namaDebitur() {
 
-//        String pattern = "HHmm";
-//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-//        String fdate = simpleDateFormat.format(new Date());
-
         String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         int len = 4;
         Random rnd = new Random();
@@ -116,15 +112,11 @@ public String timeStamp;
             case "L000132":
             case "L000040":
             case "L000001":
-                interestRate = "01475";
+                interestRate = "01025";
                 return interestRate;
             case "L000133":
-
-
-                interestRate = "01125";
-                return interestRate;
             case "L000004":
-                interestRate = "01025";
+                interestRate = "01015";
                 return interestRate;
         }
         return null;

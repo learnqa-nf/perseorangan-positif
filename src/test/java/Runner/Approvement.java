@@ -1,10 +1,9 @@
 package Runner;
 
-import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
 
-@RunWith(Cucumber.class)
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+
 @CucumberOptions(
         plugin = {"pretty",
                 "html:target/cucumber-report/cucumber.html",
@@ -16,5 +15,5 @@ import io.cucumber.junit.CucumberOptions;
         glue = {"generateDefinitions"}
 )
 
-public class Approvement {
+public class Approvement extends AbstractTestNGCucumberTests {
 }
